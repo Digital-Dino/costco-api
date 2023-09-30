@@ -19,11 +19,14 @@ user_agents = [
 blp = Blueprint('costco', __name__, description='Operations on costco')
 
 
+
 class CostcoSchema(Schema):
     keyword = fields.Str(required=True)
 class ItemSchema(Schema):
     item_id = fields.Str(dump_only=True)
     product_name = fields.Str(dump_only=True)
+
+
 
 
 @blp.route('/item')

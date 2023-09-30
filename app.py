@@ -2,6 +2,7 @@ from flask import Flask
 from flask_smorest import Api
 
 from resources.costco import blp as CostcoBlueprint
+from resources.test import blp as TestBlueprint
 
 def create_app():
     app = Flask(__name__)
@@ -18,5 +19,6 @@ def create_app():
     api = Api(app)
 
     api.register_blueprint(CostcoBlueprint)
+    api.register_blueprint(TestBlueprint)
 
     return app
